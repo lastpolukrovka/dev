@@ -1,0 +1,15 @@
+router.get("/example", async (req: Request, res: Response)  => {
+  const exampleVitruvius = new ExampleVitruvius();
+  const firstRequest = await exampleVitruvius.firstRequest();
+  switch(firstRequest.getEnumNamedMethodNamedVitruvius) {
+      case EnumFirstRequestMethodExampleVitruvius.exception:
+          res.status(504).json(firstRequest.getJSONWhereGatewayTimeoutParameterExceptionController);
+          break;
+      case EnumFirstRequestMethodExampleVitruvius.success:
+          res.status(200).json(firstRequest.getJSONWhereSuccess)
+          break;
+      default:
+          break;
+  }
+  exampleVitruvius.dispose();
+});
