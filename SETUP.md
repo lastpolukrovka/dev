@@ -2,12 +2,12 @@
 
 ## Project setup
 
-- [dart_common_dev]()
-- [dart_desktop_dev]()
-- [dart_mobile_dev]()
-- [dart_web_dev]()
-- [kotlin_android_dev]()
-- [typescript_api_dev]()
+- [dart_common_dev](https://github.com/lastpolukrovka/dev/blob/main/SETUP.md#dart_common_dev)
+- [dart_desktop_dev](https://github.com/lastpolukrovka/dev/blob/main/SETUP.md#dart_desktop_dev)
+- [dart_mobile_dev](https://github.com/lastpolukrovka/dev/blob/main/SETUP.md#dart_mobile_dev)
+- [dart_web_dev](https://github.com/lastpolukrovka/dev/blob/main/SETUP.md#dart_web_dev)
+- [kotlin_android_dev](https://github.com/lastpolukrovka/dev/blob/main/SETUP.md#kotlin_android_dev)
+- [typescript_api_dev](https://github.com/lastpolukrovka/dev/blob/main/SETUP.md#typescript_api_dev)
 
 ### dart_common_dev
 
