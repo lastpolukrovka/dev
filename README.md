@@ -14,13 +14,13 @@
 
 ## List of boards on Github Project
 
-- [Figma]()
-- [dart_common_dev]()
-- [dart_desktop_dev]()
-- [dart_mobile_dev]()
-- [dart_web_dev]()
-- [kotlin_android_dev]()
-- [typescript_api_dev]()
+- [Figma](https://github.com/users/lastpolukrovka/projects/1/views/2)
+- [dart_common_dev](https://github.com/users/lastpolukrovka/projects/1/views/4)
+- [dart_desktop_dev](https://github.com/users/lastpolukrovka/projects/1/views/5)
+- [dart_mobile_dev](https://github.com/users/lastpolukrovka/projects/1/views/6)
+- [dart_web_dev](https://github.com/users/lastpolukrovka/projects/1/views/7)
+- [kotlin_android_dev](https://github.com/users/lastpolukrovka/projects/1/views/8)
+- [typescript_api_dev](https://github.com/users/lastpolukrovka/projects/1/views/9)
 
 ## Tags
 
@@ -28,10 +28,10 @@
 
 ### 0.0.1 -- <img src="assets/red_cross.svg" align alt="Red Cross"/>
 
-- [Figma]() -- <img src="assets/red_cross.svg" alt="Red Cross"/>
-- [dart_common_dev]() -- <img src="assets/red_cross.svg" alt="Red Cross"/>
-- [dart_mobile_dev]() -- <img src="assets/red_cross.svg" alt="Red Cross"/>
-- [dart_desktop_dev]() -- <img src="assets/red_cross.svg" alt="Red Cross"/>
+- [Figma](https://github.com/users/lastpolukrovka/projects/1/views/2) -- <img src="assets/red_cross.svg" alt="Red Cross"/>
+- [dart_common_dev](https://github.com/users/lastpolukrovka/projects/1/views/4) -- <img src="assets/red_cross.svg" alt="Red Cross"/>
+- [dart_mobile_dev](https://github.com/users/lastpolukrovka/projects/1/views/6)-- <img src="assets/red_cross.svg" alt="Red Cross"/>
+- [dart_desktop_dev](https://github.com/users/lastpolukrovka/projects/1/views/5) -- <img src="assets/red_cross.svg" alt="Red Cross"/>
 
 #### Resolution||Platform||Version -- <img src="assets/red_cross.svg" alt="Red Cross"/>
 
