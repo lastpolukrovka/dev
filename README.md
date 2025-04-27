@@ -28,7 +28,7 @@
 
 ### 0.0.1 -- <img src="assets/red_cross.svg" align alt="Red Cross"/>
 
-- [Figma]() -- <div style="display: flex; justify-content: center;"><img src="assets/red_cross.svg" alt="Red Cross"/></div>
+- [Figma]() -- <img src="assets/red_cross.svg" alt="Red Cross"/>
 - [dart_common_dev]() -- <img src="assets/red_cross.svg" alt="Red Cross"/>
 - [dart_mobile_dev]() -- <img src="assets/red_cross.svg" alt="Red Cross"/>
 - [dart_desktop_dev]() -- <img src="assets/red_cross.svg" alt="Red Cross"/>
