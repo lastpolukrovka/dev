@@ -6,7 +6,7 @@ on:
       - lastpolukrovka
 env:
   java_distribution: "zulu"
-  java_version: "21"
+  java_version: "17"
   java_cache: "gradle"
 jobs:
   task:
