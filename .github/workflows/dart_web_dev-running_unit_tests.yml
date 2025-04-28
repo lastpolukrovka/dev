@@ -1,0 +1,20 @@
+name: dart_web_dev-running_unit_tests
+run-name: ${{ github.actor }} - dart_web_dev-running_unit_tests
+on:
+  push:
+    branches:
+      - lastpolukrovka
+  workflow_dispatch:
+env:
+  flutter_channel: stable
+  working_directory: dart_web_dev/app
+jobs:
+  task:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: ${{ env.flutter_channel }}
+      - run: flutter test
+        working-directory: ${{ env.working_directory }}

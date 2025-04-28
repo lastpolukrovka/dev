@@ -1,0 +1,22 @@
+name: typescript_api_dev-running_unit_tests
+run-name: ${{ github.actor }} - typescript_api_dev-running_unit_tests
+on:
+  push:
+    branches:
+      - lastpolukrovka
+  workflow_dispatch:
+env:
+  node_version: 22.13.0
+  working_directory: typescript_api_dev/app
+jobs:
+  task:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.node_version }}
+      - run: npm run download
+        working-directory: ${{ env.working_directory }}
+      - run: npm run tests
+        working-directory: ${{ env.working_directory }}
