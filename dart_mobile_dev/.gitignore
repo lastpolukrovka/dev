@@ -2,6 +2,7 @@
 .DS_Store
 .dart_tool/
 build/
+android/app/.cxx/
 *.iml
 .flutter-plugins
 .flutter-plugins-dependencies
