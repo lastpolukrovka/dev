@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - lastpolukrovka
+  workflow_dispatch:
 env:
   flutter_channel: stable
   working_directory: dart_desktop_dev

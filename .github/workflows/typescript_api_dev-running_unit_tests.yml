@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - lastpolukrovka
+  workflow_dispatch:
 env:
   node_version: 22.13.0
   working_directory: typescript_api_dev/app

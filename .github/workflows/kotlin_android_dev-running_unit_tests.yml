@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - lastpolukrovka
+  workflow_dispatch:
 env:
   java_distribution: "zulu"
   java_version: "17"
