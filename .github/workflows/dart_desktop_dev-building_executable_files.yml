@@ -6,9 +6,13 @@ env:
   flutter_channel: stable
   working_directory: dart_desktop_dev
   app_name: dev
-  created_at: ${{ format("yyyy_MM_dd_HH_mm", github.event.created_at) }}
 jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "created_at=$(date +'%Y_%m_%d_%H_%M')" >> $GITHUB_ENV
   build_linux:
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - run: |
@@ -26,6 +30,7 @@ jobs:
           name: ${{ env.created_at }}_${{ env.app_name }}
           path: ${{ env.working_directory }}/build/linux/x64/release/bundle/
   build_windows:
+    needs: setup
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
@@ -39,6 +44,7 @@ jobs:
           name: ${{ env.created_at }}_${{ env.app_name }}_exe
           path: ${{ env.working_directory }}\build\windows\x64\runner\Release\
   build_macos:
+    needs: setup
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
