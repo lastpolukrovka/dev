@@ -6,6 +6,7 @@ on:
       - lastpolukrovka
 env:
   flutter_channel: stable
+  working_directory: dart_mobile_dev
 jobs:
   task:
     runs-on: ubuntu-latest
@@ -15,6 +16,6 @@ jobs:
         with:
           channel: ${{ env.flutter_channel }}
       - run: flutter pub get
-        working-directory: dart_mobile_dev
+        working-directory: ${{ env.working_directory }}
       - run: flutter test
-        working-directory: dart_mobile_dev
+        working-directory: ${{ env.working_directory }}

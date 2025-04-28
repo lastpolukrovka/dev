@@ -6,6 +6,7 @@ on:
       - lastpolukrovka
 env:
   node_version: 22.13.0
+  working_directory: typescript_api_dev/app
 jobs:
   task:
     runs-on: ubuntu-latest
@@ -15,6 +16,6 @@ jobs:
         with:
           node-version: ${{ env.node_version }}
       - run: npm run download
-        working-directory: typescript_api_dev/app
+        working-directory: ${{ env.working_directory }}
       - run: npm run tests
-        working-directory: typescript_api_dev/app
+        working-directory: ${{ env.working_directory }}
