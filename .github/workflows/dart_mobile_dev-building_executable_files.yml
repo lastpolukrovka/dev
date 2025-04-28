@@ -23,10 +23,12 @@ jobs:
     steps:
       - run: sudo gem install cocoapods
       - uses: actions/checkout@v4
-      - run: pod install
-        working-directory: ${{ env.working_directory_ios }}
       - uses: subosito/flutter-action@v2
         with:
           channel: ${{ env.flutter_channel }}
+      - run: flutter pub get
+        working-directory: ${{ env.working_directory }}
+      - run: pod install
+        working-directory: ${{ env.working_directory_ios }}
       - run: flutter build ios --release --no-codesign
         working-directory: ${{ env.working_directory }}
