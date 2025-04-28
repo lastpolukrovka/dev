@@ -1,0 +1,22 @@
+name: kotlin_android_dev-running_unit_tests
+run-name: ${{ github.actor }} - kotlin_android_dev-running_unit_tests
+on:
+  push:
+    branches:
+      - lastpolukrovka
+env:
+  java_distribution: "zulu"
+  java_version: "21"
+  java_cache: "gradle"
+jobs:
+  task:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: ${{ env.java_distribution }}
+          java-version: ${{ env.java_version }}
+          cache: ${{ env.java_cache }}
+      - run: ./gradlew test
+        working-directory: kotlin_android_dev
