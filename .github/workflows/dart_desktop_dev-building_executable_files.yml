@@ -28,7 +28,9 @@ jobs:
   build_windows:
     runs-on: windows-latest
     steps:
-      - run: echo "created_at=$(date +'%Y_%m_%d_%H_%M')" >> $GITHUB_ENV
+      - run: |
+          $date = Get-Date -Format "yyyy_MM_dd_HH_mm"
+          echo "created_at=$date" >> $env:GITHUB_ENV
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
