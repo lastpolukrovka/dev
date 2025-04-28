@@ -6,9 +6,13 @@ env:
   flutter_channel: stable
   working_directory: dart_mobile_dev
   app_name: dev
-  created_at: ${{ format("yyyy_MM_dd_HH_mm", github.event.created_at) }}
 jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "created_at=$(date +'%Y_%m_%d_%H_%M')" >> $GITHUB_ENV
   build_android:
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -29,6 +33,7 @@ jobs:
           path: ${{ env.working_directory }}/build/app/outputs/bundle/release/
 
   build_ios:
+    needs: setup
     runs-on: macos-latest
     steps:
       - run: sudo gem install cocoapods
