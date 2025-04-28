@@ -14,12 +14,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.node_version }}
-      - run: cd typescript_api_dev/app
       - run: npm run download
+        working-directory: typescript_api_dev/app
   ## build
   test:
     needs: setup
     runs-on: ubuntu-latest
     steps:
-      - run: cd typescript_api_dev/app
       - run: npm run tests
+        working-directory: typescript_api_dev/app
