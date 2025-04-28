@@ -1,0 +1,28 @@
+name: dart_mobile_dev-building_executable_files
+run-name: ${{ github.actor }} - dart_mobile_dev-building_executable_files
+on:
+  workflow_dispatch:
+env:
+  flutter_channel: stable
+  working_directory: dart_mobile_dev
+jobs:
+  build_android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: ${{ env.flutter_channel }}
+      - run: flutter build apk
+        working-directory: ${{ env.working_directory }}
+      - run: flutter build appbundle
+        working-directory: ${{ env.working_directory }}
+  build_ios:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: ${{ env.flutter_channel }}
+      - run: flutter build ios --release --no-codesign
+        working-directory: ${{ env.working_directory }}
