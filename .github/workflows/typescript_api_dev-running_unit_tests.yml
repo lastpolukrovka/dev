@@ -10,11 +10,9 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.node_version }}
-      - run: ls -la typescript_api_dev # Debug step
       - run: npm run download
         working-directory: typescript_api_dev/app
   ## build
@@ -22,6 +20,6 @@ jobs:
     needs: setup
     runs-on: ubuntu-latest
     steps:
-      - run: ls -la typescript_api_dev # Debug step
+      - uses: actions/checkout@v4
       - run: npm run tests
         working-directory: typescript_api_dev/app
