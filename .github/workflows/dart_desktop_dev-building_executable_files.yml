@@ -6,6 +6,7 @@ env:
   flutter_channel: stable
   working_directory: dart_desktop_dev
   app_name: dev
+  created_at: ${{ format("yyyy_MM_dd_HH_mm", github.event.created_at) }}
 jobs:
   build_linux:
     runs-on: ubuntu-latest
@@ -22,7 +23,7 @@ jobs:
         working-directory: ${{ env.working_directory }}
       - uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.date_today }}_${{ env.app_name }}
+          name: ${{ env.created_at }}_${{ env.app_name }}
           path: ${{ env.working_directory }}/build/linux/x64/release/bundle/
   build_windows:
     runs-on: windows-latest
@@ -35,7 +36,7 @@ jobs:
         working-directory: ${{ env.working_directory }}
       - uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.date_today }}_${{ env.app_name }}_exe
+          name: ${{ env.created_at }}_${{ env.app_name }}_exe
           path: ${{ env.working_directory }}\build\windows\x64\runner\Release\
   build_macos:
     runs-on: macos-latest
@@ -48,5 +49,5 @@ jobs:
         working-directory: ${{ env.working_directory }}
       - uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.date_today }}_${{ env.app_name }}_app
+          name: ${{ env.created_at }}_${{ env.app_name }}_app
           path: ${{ env.working_directory }}/build/macos/Build/Products/Release/

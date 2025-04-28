@@ -6,6 +6,7 @@ env:
   flutter_channel: stable
   working_directory: dart_mobile_dev
   app_name: dev
+  created_at: ${{ format("yyyy_MM_dd_HH_mm", github.event.created_at) }}
 jobs:
   build_android:
     runs-on: ubuntu-latest
@@ -20,11 +21,11 @@ jobs:
         working-directory: ${{ env.working_directory }}
       - uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.date_today }}_${{ env.app_name }}_apk
+          name: ${{ env.created_at }}_${{ env.app_name }}_apk
           path: ${{ env.working_directory }}/build/app/outputs/flutter-apk/
       - uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.date_today }}_${{ env.app_name }}_aab
+          name: ${{ env.created_at }}_${{ env.app_name }}_aab
           path: ${{ env.working_directory }}/build/app/outputs/bundle/release/
 
   build_ios:
@@ -43,5 +44,5 @@ jobs:
         working-directory: ${{ env.working_directory }}
       - uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.date_today }}_${{ env.app_name }}_app
+          name: ${{ env.created_at }}_${{ env.app_name }}_app
           path: ${{ env.working_directory }}/build/ios/iphoneos/
