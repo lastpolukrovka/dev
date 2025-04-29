@@ -16,7 +16,7 @@ android {
         multiDexEnabled = true
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        setProperty("archivesBaseName", "kotlin_android_dev_${versionName}")
+        setProperty("archivesBaseName", "dev_${versionName}")
     }
 
     signingConfigs {
