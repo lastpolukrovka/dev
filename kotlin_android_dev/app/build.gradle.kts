@@ -5,41 +5,40 @@ plugins {
 }
 
 android {
+    compileSdk = libs.versions.compileSdk.get().toInt()
+    namespace = "com.kotlin_android_dev"
     defaultConfig {
-        namespace = "com.kotlin_android_dev"
         applicationId = "com.kotlin_android_dev"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
-        compileSdk = libs.versions.compileSdk.get().toInt()
         versionCode = libs.versions.versionCode.get().toInt()
         versionName = libs.versions.versionName.get()
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled = true
         vectorDrawables.useSupportLibrary = true
-        packaging.resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        setProperty("archivesBaseName", "dev_${versionName}")
     }
 
     signingConfigs {
-        // Important: change the keystore for a production deployment
-        val userKeystore = File(System.getProperty("user.home"), ".android/debug.keystore")
-        val localKeystore = rootProject.file("debug_2.keystore")
-        val hasKeyInfo = userKeystore.exists()
         create("release") {
-            storeFile = if (hasKeyInfo) userKeystore else localKeystore
-            storePassword = if (hasKeyInfo) "android" else System.getenv("compose_store_password")
-            keyAlias = if (hasKeyInfo) "androiddebugkey" else System.getenv("compose_key_alias")
-            keyPassword = if (hasKeyInfo) "android" else System.getenv("compose_key_password")
+            storeFile = file("kotlin_android_dev.jks")
+            storePassword = "cronoclez"
+            keyAlias = "kotlin_android_dev"
+            keyPassword = "cronoclez"
         }
     }
 
     buildTypes {
-        getByName("debug") {
-
-        }
         getByName("release") {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            isDebuggable = false
+            isJniDebuggable = false
+            isPseudoLocalesEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
 
